@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 
-function Peliculas({texto}){
+function Pelicula({titulo}){
    const [favorita, setFavorita] = useState(false);
 
    return(
@@ -17,14 +17,14 @@ function Peliculas({texto}){
                 onClick={()=> setFavorita( !favorita)}
 
                 >
-      <p>{texto} {favorita ? "⭐" : ""}</p>
+      <p>{titulo} {favorita ? "⭐" : ""}</p>
 
     </div>
    );
 }
 
 function App() {
-  const [peliculas, setPeliculas] = useState(['El  Exorcista', 'Soy Leyenda', 'Siniestro', 'John Wick', 'Never back down']);
+  const [peliculas, setPeliculas] = useState(['El  Exorcista', 'Soy Leyenda', 'Siniestro', 'Never back down']);
   const [nuevaPelicula, setNuevaPelicula] = useState('');
   function agregarPeliculas(){
     if(nuevaPelicula.trim()=== ''){
@@ -54,7 +54,7 @@ function App() {
       </div>
 
       {peliculas.map((pelicula, indice)=>(
-        <Peliculas key={indice} texto={pelicula}/>
+        <Pelicula key={indice} titulo={pelicula}/>
       ))}
     </div>
   )
