@@ -1,11 +1,14 @@
+//Importa el hook useState paramanejar el estado del componente.
 import { useState } from 'react'
 import './App.css'
 
-
+//Componente que representa una pelicula individual.
+//Permite marcar o desmarcar una pelicula como favorita.
 function Pelicula({titulo}){
    const [favorita, setFavorita] = useState(false);
 
    return(
+  //Estilos dinamicos del contenedor de la pelicula.
     <div style={{border: '1px solid gray', 
                 padding: '10px', 
                 margin: '5px', 
@@ -23,6 +26,7 @@ function Pelicula({titulo}){
    );
 }
 
+//Administra la lista de peliculas y permite agregar nuevas.
 function App() {
   const [peliculas, setPeliculas] = useState(['El  Exorcista', 'Soy Leyenda', 'Siniestro', 'Never back down']);
   const [nuevaPelicula, setNuevaPelicula] = useState('');
